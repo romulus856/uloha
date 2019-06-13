@@ -1,0 +1,34 @@
+parameters:
+    connectionParams:
+        dbname: aaa
+        user: root
+        password: ''
+        host: localhost
+        driver: pdo_mysql
+        charset: utf8mb4
+
+application:
+    errorPresenter: Error
+    mapping:
+        *: App\*Module\Presenters\*Presenter
+
+session:
+    expiration: 14 days
+
+
+services:
+    router: App\Router\RouterFactory::createRouter
+    doctrineConfig: \Doctrine\DBAL\Configuration
+    doctrineManager: \Doctrine\Common\EventManager
+    doctrineFactory: \App\Factory\DoctrineFactory(%connectionParams%)
+    database:
+            class: \Doctrine\DBAL\Connection
+            factory: \App\Factory\DoctrineFactory::createConnection(%connectionParams%)
+    formFactory: \App\Factory\FormFactory
+    customerModel: \App\Model\CustomerModel
+    cartModel: \App\Model\CartModel
+    customerReportsModel: \App\Model\CustomerReportsModel
+
+
+
+

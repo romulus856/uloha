@@ -1,0 +1,21 @@
+{block content}
+    <div class="container">
+        <h1>Kontrolní úloha PHP programátor</h1>
+        <h2>Základní popis úlohy</h2>
+        <p>Vytvořte databázovou strukturu a základní části aplikace pro správu zákaznické databáze a nákupního chování
+            zákazníka. V databázi jsou evidovány informace o zákazníkovi (jméno, příjmení, adresa, email, telefon, datum
+            registrace) a jeho věrnostních kartách (číslo karty, typ karty – dočasná/základní). Karty jsou předem
+            vytvořeny
+            v databázi a následně přidělovány zákazníkům. Každá karta může mít nejvýše jednoho vlastníka.
+            Dále jsou evidovány jednotlivé nákupy. Každý nákup obsahuje informaci o použité věrnostní kartě, seznam
+            jednotlivých položek účtu, které obsahují informaci o zakoupeném zboží, počtu kusů a ceně za položku.</p>
+
+
+        <a n:href="Customer:new" class="btn btn-primary button" style="margin-bottom: 20px">Založení nového
+            zákazníka</a>
+        <a n:href="Customer:default" class="btn btn-primary button" style="margin-bottom: 20px">Výpis a filrování
+            zákazníků</a>
+        <a n:href="Reports:default" class="btn btn-primary button" style="margin-bottom: 20px">Reporty</a>
+    </div>
+
+{/block}

@@ -1,0 +1,36 @@
+{block scripts}
+    {include parent}
+    <script src="{$basePath}/resources/dataGrid/datagrid.js"></script>
+    <script src="{$basePath}/resources/dataGrid/datagrid-instant-url-refresh.js"></script>
+    <script src="{$basePath}/resources/dataGrid/datagrid-spinners.js"></script>
+    <script>
+        $.nette.init();
+    </script>
+{/block}
+
+{block styles}
+    {include parent}
+    <link rel="stylesheet" href="{$basePath}/resources/dataGrid/datagrid.css">
+    <link rel="stylesheet" href="{$basePath}/resources/dataGrid/datagrid-spinners.css">
+{/block}
+
+{block content}
+    <div class="container" style="min-width: 80vw">
+        <div style="margin-top: 30px;margin-bottom: 30px">
+            <a n:href="Homepage:" class="btn btn-primary button" style="margin-bottom: 20px">Zpět</a>
+            <h1>Úloha 3c)</h1>
+            <p>Vytvořit stránku se základními reporty:
+            <ul>
+                <li>počet zákazníků</li>
+                <li>počet přiřazených karet</li>
+                <li>top 10 zákazníků podle obratu nákupů za posledních 30 dní</li>
+            </ul>
+            </p>
+            <hr>
+            <h2>Počet zákazníků: {$countCustomers}</h2>
+            <h2>Počet přiřazených karet: {$countAssignedCart}</h2>
+            <h2>Top 10 zákazníků za posledních 30 dní:</h2>
+            {control dataGrid}
+        </div>
+    </div>
+{/block}
